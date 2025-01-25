@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IncidentBook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0bf729a6854c24852137979340e45f4bbee99e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("IncidentBook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IncidentBook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
