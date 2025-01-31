@@ -810,11 +810,15 @@
             "nullable": true
           },
           "client": {
-            "type": "string",
-            "nullable": true
+            "type": "integer",
+            "format": "int32"
           },
           "isComplete": {
             "type": "boolean"
+          },
+          "resolution": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false
