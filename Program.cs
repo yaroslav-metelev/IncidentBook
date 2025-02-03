@@ -2,10 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using IncidentBook.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddControllers();
 builder.Services.AddDbContext<IncidentContext>(opt =>
-    opt.UseInMemoryDatabase("IncidentList"));
+    opt.UseNpgsql(connectionString));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(options =>
