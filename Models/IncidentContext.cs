@@ -17,7 +17,7 @@ namespace IncidentBook.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<IncidentItem>().HasOne<ClientItem>().WithMany().HasForeignKey(x => x.Client);
+            modelBuilder.Entity<IncidentItem>().HasOne<ClientItem>(x => x.ClientItem).WithMany().HasForeignKey(x => x.Client);
         }
     }
 }

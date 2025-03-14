@@ -106,11 +106,13 @@ namespace IncidentBook.Migrations
 
             modelBuilder.Entity("IncidentBook.Models.IncidentItem", b =>
                 {
-                    b.HasOne("IncidentBook.Models.ClientItem", null)
+                    b.HasOne("IncidentBook.Models.ClientItem", "ClientItem")
                         .WithMany()
                         .HasForeignKey("Client")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("ClientItem");
                 });
 #pragma warning restore 612, 618
         }
