@@ -12,5 +12,12 @@ namespace IncidentBook.Models
         public DbSet<ClientItem> ClientItems { get; set; } = null!;
         public DbSet<ClosedIncidentsItem> ClosedIncidentsItems { get; set; } = null!;
         public DbSet<IncidentClassification> IncidentClassifications { get; set; } = null!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<IncidentItem>().HasOne<ClientItem>().WithMany().HasForeignKey(x => x.Client);
+        }
     }
 }
