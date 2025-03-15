@@ -14,11 +14,11 @@ namespace IncidentBook.Controllers
     [ApiController]
     public class ClientItemsController : ControllerBase
     {
-        private readonly ClientService _clientService;
+        private readonly IClientService _clientService;
         private readonly IncidentContext _context;
 
         public ClientItemsController(
-            ClientService clientService,
+            IClientService clientService,
             IncidentContext context)
         {
             _clientService = clientService;

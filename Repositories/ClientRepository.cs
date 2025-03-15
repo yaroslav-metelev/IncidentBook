@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IncidentBook.Repositories
 {
-    public class ClientRepository
+    public class ClientRepository : IClientRepository
     {
         private IncidentContext _context;
 

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IncidentBook.Services
 {
-    public class ClientService
+    public class ClientService : IClientService
     {
-        private ClientRepository _clientReposiory;
+        private IClientRepository _clientReposiory;
 
-        public ClientService(ClientRepository clientReposiory)
+        public ClientService(IClientRepository clientReposiory)
         {
             _clientReposiory = clientReposiory;
         }

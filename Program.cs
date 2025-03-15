@@ -21,8 +21,8 @@ builder.Services.AddCors(options =>
     });
 });
 
-builder.Services.AddScoped<ClientService>();
-builder.Services.AddScoped<ClientRepository>();
+builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IClientRepository, ClientRepository>();
 
 var app = builder.Build();
 
