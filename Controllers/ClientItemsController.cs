@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using IncidentBook.Models;
+using IncidentBook.Services;
 
 namespace IncidentBook.Controllers
 {
@@ -13,10 +14,14 @@ namespace IncidentBook.Controllers
     [ApiController]
     public class ClientItemsController : ControllerBase
     {
+        private readonly ClientService _clientService;
         private readonly IncidentContext _context;
 
-        public ClientItemsController(IncidentContext context)
+        public ClientItemsController(
+            ClientService clientService,
+            IncidentContext context)
         {
+            _clientService = clientService;
             _context = context;
         }
 
@@ -24,14 +29,14 @@ namespace IncidentBook.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ClientItem>>> GetClients()
         {
-            return await _context.ClientItems.ToListAsync();
+            return await _clientService.GetAllClients();
         }
 
         // GET: api/ClientItems/5
         [HttpGet("{id}")]
         public async Task<ActionResult<ClientItem>> GetClientItem(int id)
         {
-            var clientItem = await _context.ClientItems.FindAsync(id);
+            var clientItem = await _clientService.GetClientItem(id);
 
             if (clientItem == null)
             {
